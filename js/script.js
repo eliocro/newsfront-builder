@@ -18,10 +18,24 @@ Array.prototype.move = function (old_index, new_index) {
 (function () {
   var app = angular.module('nf-builder', ['ngCookies']);
 
-
   app.controller('MainCtrl', function ($scope, $cookieStore) {
-    $scope.sections = [];
+    $scope.haf = {
+      topMenu: {
+        barItems: ['Menu item 1', 'Menu item 2', 'Menu item 3'],
+        subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5', 'Menu item 6']
+      },
+      mainMenu: {
+        barItems: ['Menu item 4', 'Menu item 5', 'Menu item 6'],
+        subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5', 'Menu item 6']
+      },
+      footer: {
+        menuItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5'],
+        tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      }
+    };
 
+    $scope.sections = [];
+    $scope.overlay = false;
 
     $scope.createGrid = function () {
       console.log('Create grid');
@@ -96,6 +110,9 @@ Array.prototype.move = function (old_index, new_index) {
       $scope.saveConfig();
     };
 
+    $scope.showEditor = function (what) {
+      $scope.overlay = what || true;
+    };
 
     /* Section control */
     $scope.moveSection = function (idx, where) {

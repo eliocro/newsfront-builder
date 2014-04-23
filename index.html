@@ -9,11 +9,121 @@
   <!-- Custom CSS -->
   <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/style.css">
 
 </head>
 <body ng-controller="MainCtrl">
+
+  <!-- EDITOR OVERLAY -->
+  <div class="form-overlay" ng-show="overlay">
+    <div class="inside clearfix">
+
+      <div ng-show="overlay === 'topMenu'">
+        <h2>Top Menu</h2>
+        <label>Menu bar items</label>
+        <textarea placeholder="Enter the menu items, separated by comma."></textarea>
+        <label>Sub menu items</label>
+        <textarea></textarea>
+        <label>Description</label>
+        <textarea placeholder="Describe the menu (color, strings, etc)..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'mainMenu'">
+        <h2>Main Menu</h2>
+        <label>Menu bar items</label>
+        <textarea placeholder="Enter the menu items, separated by comma."></textarea>
+        <label>Sub menu items</label>
+        <textarea></textarea>
+        <label>Description</label>
+        <textarea placeholder="Describe the menu (color, strings, etc)..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'footer'">
+        <h2>Footer</h2>
+        <label>Footer Menu items</label>
+        <textarea></textarea>
+        <label>Tagline</label>
+        <input type="text">
+        <label>Description</label>
+        <textarea placeholder="Describe any aspect of the footer..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'config'">
+        <h2>Builder config</h2>
+        <br>
+        <textarea style="height: 300px;"></textarea>
+      </div>
+
+      <div ng-show="overlay === 'feature'">
+        <h2>Featured Article</h2>
+        <label>Title</label>
+        <input type="text" value="">
+        <label>Description</label>
+        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'grid'">
+        <h2>Grid</h2>
+        <label>Title</label>
+        <input type="text" value="">
+        <label>Number of elements</label>
+        <input type="text" class="small">
+        <label>Description</label>
+        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'small-grid'">
+        <h2>Small Grid</h2>
+        <label>Title</label>
+        <input type="text" value="">
+        <label>LEFT: Number of elements</label>
+        <input type="text" class="small">
+        <label>RIGHT: Number of elements</label>
+        <input type="text" class="small">
+        <label>Description</label>
+        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'list'">
+        <h2>List</h2>
+        <label>Title</label>
+        <input type="text" value="">
+        <label>Number of elements</label>
+        <input type="text" class="small">
+        <label>Description</label>
+        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+      </div>
+
+      <div ng-show="overlay === 'small-list'">
+        <h2>Small lists</h2>
+        <label>LEFT: Title</label>
+        <input type="text" value="">
+        <label>LEFT: Number of elements</label>
+        <input type="text" class="small">
+        <label>CENTER: Title</label>
+        <input type="text" value="">
+        <label>CENTER: Number of elements</label>
+        <input type="text" class="small">
+        <label>RIGHT: Title</label>
+        <input type="text" value="">
+        <label>RIGHT: Number of elements</label>
+        <input type="text" class="small">
+        <label>Description</label>
+        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+      </div>
+
+      <br>
+      <div class="right">
+        <button class="btn" ng-click="overlay = false">Cancel</button>
+        &nbsp;
+        <button class="btn btn-green" ng-click="saveEditor()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW SECTION BUTTONS -->
   <div class="add-section">
     <button class="btn btn-orange" ng-click="createFeature()">Create feature</button>
 
@@ -23,62 +133,53 @@
     <button class="btn btn-blue" ng-click="createList()">Create list</button>
     <button class="btn btn-blue" ng-click="createSmallList()">Create small list</button>
 
-    <button class="btn" ng-click="getConfig()">Get config</button>
+    <button class="btn" ng-click="showEditor('config')">Show config</button>
     <br><br><br>
     <button class="btn btn-outline" ng-click="clearConfig()">Clear config</button>
   </div>
 
+  <!-- TOP MENU -->
   <div class="top-menu">
-    <i class="right icon-list-thumbnails"></i>
+    <i class="right icon-list-thumbnails" ng-click="showEditor('topMenu')"></i>
     <div class="wrapper">
       Newsfront
       <a href="" ng-click="tm=!tm">Meny</a>
       <ul>
-        <li>Menu item 1</li>
-        <li>Menu item 2</li>
-        <li>Menu item 3</li>
+        <li ng-repeat="item in haf.topMenu.barItems">{{item}}</li>
       </ul>
     </div>
   </div>
   <div class="sub-menu clearfix" ng-show="tm">
     <ul>
-      <li>Menu item 1</li>
-      <li>Menu item 2</li>
-      <li>Menu item 3</li>
-      <li>Menu item 4</li>
-      <li>Menu item 5</li>
-      <li>Menu item 6</li>
+      <li ng-repeat="item in haf.topMenu.subItems">{{item}}</li>
     </ul>
   </div>
 
+  <!-- MAIN MENU -->
   <div class="main-menu">
-    <i class="right icon-list-thumbnails"></i>
+    <i class="right icon-list-thumbnails" ng-click="showEditor('mainMenu')"></i>
     <div class="wrapper">
       Forside
       <a href="" ng-click="mm=!mm">Seksjoner</a>
       <ul>
-        <li>Menu item 4</li>
-        <li>Menu item 5</li>
-        <li>Menu item 6</li>
+        <li ng-repeat="item in haf.mainMenu.barItems">{{item}}</li>
       </ul>
     </div>
     </div>
   </div>
   <div class="sub-menu clearfix" ng-show="mm">
     <ul>
-      <li>Menu item 1</li>
-      <li>Menu item 2</li>
-      <li>Menu item 3</li>
-      <li>Menu item 4</li>
-      <li>Menu item 5</li>
-      <li>Menu item 6</li>
+      <li ng-repeat="item in haf.mainMenu.subItems">{{item}}</li>
     </ul>
   </div>
 
+  <!-- SECTIONS MENU -->
   <div class="wrapper multi-section">
     <section ng-repeat="item in sections">
+
+      <!-- TOOLBOX -->
       <div class="toolbox">
-        <a href="" ng-click="">
+        <a href="" ng-click="showEditor(item.type, $index)">
           <i class="icon-list-thumbnails"></i>
         </a>
         <br>
@@ -170,22 +271,20 @@
     </section>
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
-    <i class="right icon-list-thumbnails"></i>
+    <i class="right icon-list-thumbnails" ng-click="showEditor('footer')"></i>
     <div class="wrapper clearfix">
       <div class="logo">Newsfront</div>
       <ul>
-        <li>Menu item 1</li>
-        <li>Menu item 2</li>
-        <li>Menu item 3</li>
-        <li>Menu item 4</li>
-        <li>Menu item 5</li>
+        <li ng-repeat="item in haf.footer.menuItems">{{item}}</li>
       </ul>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>{{haf.footer.tagline}}</p>
     </div>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-cookies.js"></script>
   <script src="./js/script.js"></script>
