@@ -1,0 +1,509 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/modules/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, ../sass/modules/_base.scss */
+html {
+  background-color: white;
+}
+
+/* line 11, ../sass/modules/_base.scss */
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+}
+
+/* line 19, ../sass/modules/_base.scss */
+input {
+  border-radius: 0;
+}
+
+/* line 24, ../sass/modules/_base.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 33, ../sass/modules/_base.scss */
+button,
+input {
+  line-height: normal;
+  text-transform: none;
+}
+
+/* line 39, ../sass/modules/_base.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 47, ../sass/modules/_base.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+/* line 51, ../sass/modules/_base.scss */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 54, ../sass/modules/_base.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 59, ../sass/modules/_base.scss */
+a img {
+  border: none;
+}
+
+/* line 63, ../sass/modules/_base.scss */
+a {
+  text-decoration: none;
+  color: #666666;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 2, ../sass/modules/_typography.scss */
+h1, h2, h3, h4 {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* line 7, ../sass/modules/_typography.scss */
+h1 {
+  font-size: 22px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* line 12, ../sass/modules/_typography.scss */
+h2 {
+  font-size: 18px;
+  margin-bottom: 0.3em;
+}
+
+/* line 16, ../sass/modules/_typography.scss */
+h3 {
+  font-size: 16px;
+}
+
+/* line 19, ../sass/modules/_typography.scss */
+h4 {
+  font-size: 15px;
+}
+
+/* line 23, ../sass/modules/_typography.scss */
+p {
+  text-align: left;
+  font-size: 12px;
+}
+
+/* line 27, ../sass/modules/_typography.scss */
+.feature p {
+  font-size: 1.1em;
+}
+
+/* line 1, ../sass/modules/_buttons.scss */
+.btn {
+  padding: 10px 20px;
+  font-size: em(18);
+  font-weight: 400;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  background-color: #666666;
+}
+/* line 10, ../sass/modules/_buttons.scss */
+.btn:hover, .btn.active {
+  background-color: black !important;
+}
+/* line 14, ../sass/modules/_buttons.scss */
+.btn.btn-green {
+  background-color: #009452;
+}
+/* line 16, ../sass/modules/_buttons.scss */
+.btn.btn-green:hover, .btn.btn-green.active {
+  background-color: #006136 !important;
+}
+/* line 19, ../sass/modules/_buttons.scss */
+.btn.btn-green.btn-outline {
+  color: #009452;
+}
+/* line 24, ../sass/modules/_buttons.scss */
+.btn.btn-blue {
+  background-color: #1368ea;
+}
+/* line 26, ../sass/modules/_buttons.scss */
+.btn.btn-blue:hover, .btn.btn-blue.active {
+  background-color: #0f53bb !important;
+}
+/* line 29, ../sass/modules/_buttons.scss */
+.btn.btn-blue.btn-outline {
+  color: #1368ea;
+}
+/* line 34, ../sass/modules/_buttons.scss */
+.btn.btn-orange {
+  background-color: #ffb700;
+}
+/* line 36, ../sass/modules/_buttons.scss */
+.btn.btn-orange:hover, .btn.btn-orange.active {
+  background-color: #cc9200 !important;
+}
+/* line 39, ../sass/modules/_buttons.scss */
+.btn.btn-orange.btn-outline {
+  color: #ffb700;
+}
+/* line 44, ../sass/modules/_buttons.scss */
+.btn.btn-outline {
+  border: 1px solid #666666;
+  background-color: #eeeeee;
+  color: #666666;
+  font-weight: bold;
+}
+/* line 49, ../sass/modules/_buttons.scss */
+.btn.btn-outline:hover, .btn.btn-outline.active {
+  color: white;
+  background-color: #666666;
+  border: 1px solid white;
+}
+/* line 56, ../sass/modules/_buttons.scss */
+.btn:focus {
+  outline: 0;
+}
+
+/* line 1, ../sass/modules/_layout.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, ../sass/modules/_layout.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 7, ../sass/modules/_layout.scss */
+*[center] {
+  text-align: center;
+}
+
+/* line 11, ../sass/modules/_layout.scss */
+.left {
+  float: left;
+}
+
+/* line 14, ../sass/modules/_layout.scss */
+.right {
+  float: right;
+}
+
+/* line 19, ../sass/modules/_layout.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+/* line 24, ../sass/modules/_layout.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 29, ../sass/modules/_layout.scss */
+.wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* line 35, ../sass/modules/_layout.scss */
+.block {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #eeeeee;
+  color: #333333;
+  text-align: center;
+}
+
+/* line 43, ../sass/modules/_layout.scss */
+.add-section {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  margin-left: 20px;
+  margin-top: -183px;
+}
+/* line 50, ../sass/modules/_layout.scss */
+.add-section button {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* line 2, ../sass/modules/_header.scss */
+.top-menu, .main-menu {
+  height: 42px;
+  padding: 15px 0;
+  text-align: left;
+}
+/* line 6, ../sass/modules/_header.scss */
+.top-menu a, .main-menu a {
+  display: block;
+  float: right;
+  border-left: 1px solid #cccccc;
+  padding: 14px;
+  margin-top: -15px;
+  background: rgba(0, 0, 0, 0.05);
+}
+/* line 14, ../sass/modules/_header.scss */
+.top-menu ul, .main-menu ul {
+  float: right;
+}
+/* line 17, ../sass/modules/_header.scss */
+.top-menu li, .main-menu li {
+  display: inline-block;
+  padding-right: 20px;
+}
+/* line 21, ../sass/modules/_header.scss */
+.top-menu i, .main-menu i {
+  margin-top: -5px;
+  margin-right: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* line 29, ../sass/modules/_header.scss */
+.top-menu {
+  background-color: white;
+  color: #666666;
+  font-weight: bold;
+}
+/* line 33, ../sass/modules/_header.scss */
+.top-menu a {
+  color: #666666;
+}
+
+/* line 37, ../sass/modules/_header.scss */
+.main-menu {
+  background-color: #cc0000;
+  color: white;
+}
+/* line 40, ../sass/modules/_header.scss */
+.main-menu a {
+  color: white;
+}
+
+/* line 45, ../sass/modules/_header.scss */
+.sub-menu {
+  position: relative;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0;
+}
+/* line 50, ../sass/modules/_header.scss */
+.sub-menu li {
+  float: left;
+  width: 25%;
+  padding: 5px 10px;
+}
+
+/* line 57, ../sass/modules/_header.scss */
+.footer {
+  height: 200px;
+  background-color: #cc0000;
+  color: white;
+}
+/* line 61, ../sass/modules/_header.scss */
+.footer .logo {
+  position: absolute;
+  margin-top: 58px;
+  font-size: 38px;
+  font-weight: bold;
+}
+/* line 67, ../sass/modules/_header.scss */
+.footer ul {
+  margin-top: 80px;
+  float: right;
+}
+/* line 71, ../sass/modules/_header.scss */
+.footer li {
+  display: inline-block;
+  padding-left: 20px;
+}
+/* line 75, ../sass/modules/_header.scss */
+.footer p {
+  clear: both;
+  padding-top: 10px;
+  text-align: right;
+}
+/* line 80, ../sass/modules/_header.scss */
+.footer i {
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* line 2, ../sass/modules/_sections.scss */
+.multi-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 400px;
+}
+
+/* line 8, ../sass/modules/_sections.scss */
+section {
+  position: relative;
+  margin: 40px 0;
+}
+/* line 11, ../sass/modules/_sections.scss */
+section .title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+/* line 16, ../sass/modules/_sections.scss */
+section .toolbox {
+  position: absolute;
+  left: 100%;
+  margin-left: 0px;
+  top: 35px;
+}
+/* line 21, ../sass/modules/_sections.scss */
+section .toolbox a {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 28px;
+  opacity: 0.4;
+}
+/* line 26, ../sass/modules/_sections.scss */
+section .toolbox a:hover {
+  opacity: 1.0;
+}
+
+/* line 34, ../sass/modules/_sections.scss */
+.large-grid .block {
+  width: 32.33%;
+  height: 200px;
+  margin-top: 8px;
+  margin-right: 1%;
+  float: left;
+}
+
+/* line 44, ../sass/modules/_sections.scss */
+.small-grid .clearfix > div {
+  width: 49%;
+  margin-right: 1%;
+  float: left;
+}
+/* line 49, ../sass/modules/_sections.scss */
+.small-grid .block {
+  height: 100px;
+  margin-top: 8px;
+}
+/* line 53, ../sass/modules/_sections.scss */
+.small-grid img {
+  margin-right: 10px;
+}
+
+/* line 59, ../sass/modules/_sections.scss */
+.large-list .block {
+  width: 99%;
+  margin-top: 2px;
+}
+
+/* line 66, ../sass/modules/_sections.scss */
+.small-list .clearfix > div {
+  width: 32.33%;
+  margin-right: 1%;
+  float: left;
+}
+/* line 71, ../sass/modules/_sections.scss */
+.small-list .block {
+  margin-top: 2px;
+}
+
+/* line 76, ../sass/modules/_sections.scss */
+.feature .block {
+  width: 99%;
+}

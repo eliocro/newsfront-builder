@@ -1,0 +1,29 @@
+
+h1, h2, h3, h4 {
+  text-align: left;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 22px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 18px;
+  margin-bottom: 0.3em;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 15px;
+}
+
+p {
+  text-align: left;
+  font-size: 12px;
+}
+.feature p {
+  font-size: 1.1em;
+}

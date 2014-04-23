@@ -1,0 +1,39 @@
+// Variables
+// Font families
+$font-family-text: 'Open Sans', Arial, sans-serif;
+
+// Colors
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-blue: #1368ea;
+$color-blue-light: lighten($color-blue, 15);
+$color-blue-dark: darken($color-blue, 10);
+
+$color-green: #009452;
+$color-green-light: lighten($color-green, 15);
+$color-green-dark: darken($color-green, 10);
+
+$color-orange: #ffb700;
+$color-orange-light: lighten($color-orange, 15);
+$color-orange-dark: darken($color-orange, 10);
+
+$color-red: #cc0000;
+$color-red-dark: darken($color-red, 5);
+
+$color-yellow: #fdbe03;
+
+$color-grey: #cccccc;
+$color-grey-dark: #666666;
+$color-grey-darkest: #333333;
+$color-grey-light: #eeeeee;
+
+// Site background
+$color-webpage-bg: $color-white;
+$color-content-bg: $color-white;
+
+$color-header-bg: $color-blue;
+$color-footer-bg: $color-blue-light;
+
+$color-text: $color-grey-dark;
+$color-text-blue: lighten($color-blue, 8);

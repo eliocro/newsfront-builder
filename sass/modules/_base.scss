@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+
+// Border box sizing
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $color-webpage-bg;
+}
+body {
+  font-family: $font-family-text;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-grey-dark;
+}
+
+// Forms (from normalize.css)
+input {
+  // -webkit-appearance: none;
+  border-radius: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  line-height: normal;
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+strong, b {
+  font-weight: bold;
+}
+em, i {
+  font-style: italic;
+}
+
+// Remove border on images in ie9 and ie10
+a img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-grey-dark;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
