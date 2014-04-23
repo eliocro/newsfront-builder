@@ -145,13 +145,13 @@
       Newsfront
       <a href="" ng-click="tm=!tm">Meny</a>
       <ul>
-        <li ng-repeat="item in haf.topMenu.barItems">{{item}}</li>
+        <li ng-repeat="item in conf.topMenu.barItems">{{item}}</li>
       </ul>
     </div>
   </div>
   <div class="sub-menu clearfix" ng-show="tm">
     <ul>
-      <li ng-repeat="item in haf.topMenu.subItems">{{item}}</li>
+      <li ng-repeat="item in conf.topMenu.subItems">{{item}}</li>
     </ul>
   </div>
 
@@ -162,20 +162,20 @@
       Forside
       <a href="" ng-click="mm=!mm">Seksjoner</a>
       <ul>
-        <li ng-repeat="item in haf.mainMenu.barItems">{{item}}</li>
+        <li ng-repeat="item in conf.mainMenu.barItems">{{item}}</li>
       </ul>
     </div>
     </div>
   </div>
   <div class="sub-menu clearfix" ng-show="mm">
     <ul>
-      <li ng-repeat="item in haf.mainMenu.subItems">{{item}}</li>
+      <li ng-repeat="item in conf.mainMenu.subItems">{{item}}</li>
     </ul>
   </div>
 
   <!-- SECTIONS MENU -->
   <div class="wrapper multi-section">
-    <section ng-repeat="item in sections">
+    <section ng-repeat="item in conf.sections">
 
       <!-- TOOLBOX -->
       <div class="toolbox">
@@ -277,9 +277,9 @@
     <div class="wrapper clearfix">
       <div class="logo">Newsfront</div>
       <ul>
-        <li ng-repeat="item in haf.footer.menuItems">{{item}}</li>
+        <li ng-repeat="item in conf.footer.menuItems">{{item}}</li>
       </ul>
-      <p>{{haf.footer.tagline}}</p>
+      <p>{{conf.footer.tagline}}</p>
     </div>
   </div>
 

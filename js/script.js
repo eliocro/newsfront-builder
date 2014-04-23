@@ -19,7 +19,7 @@ Array.prototype.move = function (old_index, new_index) {
   var app = angular.module('nf-builder', ['ngCookies']);
 
   app.controller('MainCtrl', function ($scope, $cookieStore) {
-    $scope.haf = {
+    $scope.conf = {
       topMenu: {
         barItems: ['Menu item 1', 'Menu item 2', 'Menu item 3'],
         subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5', 'Menu item 6']
@@ -31,10 +31,9 @@ Array.prototype.move = function (old_index, new_index) {
       footer: {
         menuItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5'],
         tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      }
+      },
+      section: []
     };
-
-    $scope.sections = [];
     $scope.overlay = false;
 
     $scope.createGrid = function () {
@@ -45,7 +44,7 @@ Array.prototype.move = function (old_index, new_index) {
         count: 6
       };
 
-      $scope.sections.push(section);
+      $scope.conf.sections.push(section);
       $scope.saveConfig();
     };
 
@@ -62,7 +61,7 @@ Array.prototype.move = function (old_index, new_index) {
         }
       };
 
-      $scope.sections.push(section);
+      $scope.conf.sections.push(section);
       $scope.saveConfig();
     };
 
@@ -73,7 +72,7 @@ Array.prototype.move = function (old_index, new_index) {
         title: 'The List',
         count: 8
       };
-      $scope.sections.push(section);
+      $scope.conf.sections.push(section);
       $scope.saveConfig();
     };
 
@@ -95,7 +94,7 @@ Array.prototype.move = function (old_index, new_index) {
         }
       };
 
-      $scope.sections.push(section);
+      $scope.conf.sections.push(section);
       $scope.saveConfig();
     };
 
@@ -106,7 +105,7 @@ Array.prototype.move = function (old_index, new_index) {
         title: 'Featured article'
       };
 
-      $scope.sections.push(section);
+      $scope.conf.sections.push(section);
       $scope.saveConfig();
     };
 
@@ -117,14 +116,14 @@ Array.prototype.move = function (old_index, new_index) {
     /* Section control */
     $scope.moveSection = function (idx, where) {
       var next = idx + where;
-      if(next >= 0 && next < $scope.sections.length) {
-        $scope.sections.move(idx, next);
+      if(next >= 0 && next < $scope.conf.sections.length) {
+        $scope.conf.sections.move(idx, next);
       }
       $scope.saveConfig();
     };
 
     $scope.deleteSection = function (idx) {
-      $scope.sections.splice(idx, 1);
+      $scope.conf.sections.splice(idx, 1);
       $scope.saveConfig();
     };
 
@@ -138,21 +137,21 @@ Array.prototype.move = function (old_index, new_index) {
     };
 
     $scope.clearConfig = function () {
-      $scope.sections = [];
+      $scope.conf.sections = [];
       $scope.saveConfig();
     };
 
     $scope.getConfig = function () {
-      console.log(JSON.stringify($scope.sections));
+      console.log(JSON.stringify($scope.conf.sections));
     };
 
     /* Save a read from cookie */
     $scope.saveConfig = function () {
-      $cookieStore.put('config', $scope.sections);
+      $cookieStore.put('config', $scope.conf.sections);
     };
-    $scope.sections = $cookieStore.get('config') || [];
+    $scope.conf.sections = $cookieStore.get('config') || [];
 
-    console.log($scope.sections);
+    console.log($scope.conf.sections);
   });
 
 })();
