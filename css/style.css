@@ -549,7 +549,7 @@ label {
 }
 
 /* line 32, ../sass/modules/_overlay.scss */
-input[type="text"], textarea {
+input[type="text"], input[type="number"], textarea {
   display: block;
   margin: 5px 0;
   width: 100%;
@@ -559,8 +559,9 @@ input[type="text"], textarea {
   background-color: white;
   outline: none;
 }
-/* line 41, ../sass/modules/_overlay.scss */
-input[type="text"].small, textarea.small {
+
+/* line 42, ../sass/modules/_overlay.scss */
+input[type="number"] {
   width: 30%;
 }
 

@@ -76,7 +76,7 @@
         <label>Title</label>
         <input ng-model="form.grid.title" type="text" value="">
         <label>Number of elements</label>
-        <input ng-model="form.grid.count" type="text" class="small">
+        <input ng-model="form.grid.count" type="number" pattern="\d*">
         <label>Description</label>
         <textarea ng-model="form.grid.description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
@@ -87,9 +87,9 @@
         <label>Title</label>
         <input ng-model="form['small-grid'].title" type="text" value="">
         <label>LEFT: Number of elements</label>
-        <input ng-model="form['small-grid'].left.count" type="text" class="small">
+        <input ng-model="form['small-grid'].left.count" type="number" pattern="\d*">
         <label>RIGHT: Number of elements</label>
-        <input ng-model="form['small-grid'].right.count" type="text" class="small">
+        <input ng-model="form['small-grid'].right.count" type="number" pattern="\d*">
         <label>Description</label>
         <textarea ng-model="form['small-grid'].description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
@@ -100,7 +100,7 @@
         <label>Title</label>
         <input ng-model="form.list.title" type="text" value="">
         <label>Number of elements</label>
-        <input ng-model="form.list.count" type="text" class="small">
+        <input ng-model="form.list.count" type="number" pattern="\d*">
         <label>Description</label>
         <textarea ng-model="form.list.description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
@@ -111,15 +111,15 @@
         <label>LEFT: Title</label>
         <input ng-model="form['small-list'].left.title" type="text" value="">
         <label>LEFT: Number of elements</label>
-        <input ng-model="form['small-list'].left.count" type="text" class="small">
+        <input ng-model="form['small-list'].left.count" type="number" pattern="\d*">
         <label>CENTER: Title</label>
         <input ng-model="form['small-list'].center.title" type="text" value="">
         <label>CENTER: Number of elements</label>
-        <input ng-model="form['small-list'].center.count" type="text" class="small">
+        <input ng-model="form['small-list'].center.count" type="number" pattern="\d*">
         <label>RIGHT: Title</label>
         <input ng-model="form['small-list'].right.title" type="text" value="">
         <label>RIGHT: Number of elements</label>
-        <input ng-model="form['small-list'].right.count" type="text" class="small">
+        <input ng-model="form['small-list'].right.count" type="number" pattern="\d*">
         <label>Description</label>
         <textarea ng-model="form['small-list'].description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
