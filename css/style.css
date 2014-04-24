@@ -350,73 +350,78 @@ html, body {
   margin-right: 10px;
   font-size: 28px;
   cursor: pointer;
+  opacity: 0.6;
+}
+/* line 27, ../sass/modules/_header.scss */
+.top-menu i:hover, .main-menu i:hover {
+  opacity: 1.0;
 }
 
-/* line 29, ../sass/modules/_header.scss */
+/* line 33, ../sass/modules/_header.scss */
 .top-menu {
   background-color: white;
   color: #666666;
   font-weight: bold;
 }
-/* line 33, ../sass/modules/_header.scss */
+/* line 37, ../sass/modules/_header.scss */
 .top-menu a {
   color: #666666;
 }
 
-/* line 37, ../sass/modules/_header.scss */
+/* line 41, ../sass/modules/_header.scss */
 .main-menu {
   background-color: #cc0000;
   color: white;
 }
-/* line 40, ../sass/modules/_header.scss */
+/* line 44, ../sass/modules/_header.scss */
 .main-menu a {
   color: white;
 }
 
-/* line 45, ../sass/modules/_header.scss */
+/* line 49, ../sass/modules/_header.scss */
 .sub-menu {
   position: relative;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
   padding: 10px 0;
 }
-/* line 50, ../sass/modules/_header.scss */
+/* line 54, ../sass/modules/_header.scss */
 .sub-menu li {
   float: left;
   width: 25%;
   padding: 5px 10px;
 }
 
-/* line 57, ../sass/modules/_header.scss */
+/* line 61, ../sass/modules/_header.scss */
 .footer {
   height: 200px;
   background-color: #cc0000;
   color: white;
 }
-/* line 61, ../sass/modules/_header.scss */
+/* line 65, ../sass/modules/_header.scss */
 .footer .logo {
   position: absolute;
   margin-top: 58px;
   font-size: 38px;
   font-weight: bold;
 }
-/* line 67, ../sass/modules/_header.scss */
+/* line 71, ../sass/modules/_header.scss */
 .footer ul {
   margin-top: 80px;
   float: right;
 }
-/* line 71, ../sass/modules/_header.scss */
+/* line 75, ../sass/modules/_header.scss */
 .footer li {
   display: inline-block;
   padding-left: 20px;
 }
-/* line 75, ../sass/modules/_header.scss */
+/* line 79, ../sass/modules/_header.scss */
 .footer p {
   clear: both;
   padding-top: 10px;
   text-align: right;
 }
-/* line 80, ../sass/modules/_header.scss */
+/* line 84, ../sass/modules/_header.scss */
 .footer i {
   margin-top: 10px;
   margin-right: 10px;

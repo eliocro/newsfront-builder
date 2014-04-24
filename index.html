@@ -22,7 +22,7 @@
       <i class="icon-x-circle" ng-click="closeEditor()"></i>
 
       <!-- TOP MENU -->
-      <div ng-show="overlay === 'topMenu'">
+      <div ng-if="overlay === 'topMenu'">
         <h2>Top Menu</h2>
         <label>Menu bar items</label>
         <textarea ng-model="form.topMenu.barItems" placeholder="Enter the menu items, separated by comma."></textarea>
@@ -33,7 +33,7 @@
       </div>
 
       <!-- MAIN MENU -->
-      <div ng-show="overlay === 'mainMenu'">
+      <div ng-if="overlay === 'mainMenu'">
         <h2>Main Menu</h2>
         <label>Menu bar items</label>
         <textarea ng-model="form.mainMenu.barItems" placeholder="Enter the menu items, separated by comma."></textarea>
@@ -44,7 +44,7 @@
       </div>
 
       <!-- FOOTER -->
-      <div ng-show="overlay === 'footer'">
+      <div ng-if="overlay === 'footer'">
         <h2>Footer</h2>
         <label>Footer Menu items</label>
         <textarea ng-model="form.footer.menuItems"></textarea>
@@ -55,14 +55,14 @@
       </div>
 
       <!-- CONFIG -->
-      <div ng-show="overlay === 'config'">
+      <div ng-if="overlay === 'config'">
         <h2>Builder config</h2>
         <br>
         <textarea ng-model="form.conf" style="height: 300px;"></textarea>
       </div>
 
       <!-- FEATURE -->
-      <div ng-show="overlay === 'feature'">
+      <div ng-if="overlay === 'feature'">
         <h2>Featured Article</h2>
         <label>Title</label>
         <input ng-model="form.feature.title" type="text" value="">
@@ -71,7 +71,7 @@
       </div>
 
       <!-- GRID -->
-      <div ng-show="overlay === 'grid'">
+      <div ng-if="overlay === 'grid'">
         <h2>Grid</h2>
         <label>Title</label>
         <input ng-model="form.grid.title" type="text" value="">
@@ -82,7 +82,7 @@
       </div>
 
       <!-- SMALL GRID -->
-      <div ng-show="overlay === 'small-grid'">
+      <div ng-if="overlay === 'small-grid'">
         <h2>Small Grid</h2>
         <label>Title</label>
         <input ng-model="form['small-grid'].title" type="text" value="">
@@ -95,7 +95,7 @@
       </div>
 
       <!-- LIST -->
-      <div ng-show="overlay === 'list'">
+      <div ng-if="overlay === 'list'">
         <h2>List</h2>
         <label>Title</label>
         <input ng-model="form.list.title" type="text" value="">
@@ -106,7 +106,7 @@
       </div>
 
       <!-- SMALL LIST -->
-      <div ng-show="overlay === 'small-list'">
+      <div ng-if="overlay === 'small-list'">
         <h2>Small lists</h2>
         <label>LEFT: Title</label>
         <input ng-model="form['small-list'].left.title" type="text" value="">
@@ -204,7 +204,7 @@
       </div>
 
       <!-- MAIN FEATURE -->
-      <div class="feature clearfix" ng-show="item.type == 'feature'">
+      <div class="feature clearfix" ng-if="item.type == 'feature'">
         <div class="title" ng-show="item.title">{{item.title}}</div>
         <div class="block">
           <img src="http://placeimg.com/830/400/arch/grayscale">
@@ -214,7 +214,7 @@
       </div>
 
       <!-- GRID -->
-      <div class="large-grid clearfix" ng-show="item.type == 'grid'">
+      <div class="large-grid clearfix" ng-if="item.type == 'grid'">
         <div class="title" ng-show="item.title">{{item.title}}</div>
         <div class="block" ng-repeat="i in getArray(item.count)">
           <img src="http://placeimg.com/250/100/arch/grayscale">
@@ -224,7 +224,7 @@
       </div>
 
       <!-- SMALL GRID -->
-      <div class="small-grid" ng-show="item.type == 'small-grid'">
+      <div class="small-grid" ng-if="item.type == 'small-grid'">
         <div class="title" ng-show="item.title">{{item.title}}</div>
         <div class="clearfix">
           <div>
@@ -245,7 +245,7 @@
       </div>
 
       <!-- LIST -->
-      <div class="large-list" ng-show="item.type == 'list'">
+      <div class="large-list" ng-if="item.type == 'list'">
         <div class="title" ng-show="item.title">{{item.title}}</div>
         <div class="block" ng-repeat="i in getArray(item.count)">
           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
@@ -253,7 +253,7 @@
       </div>
 
       <!-- SMALL LIST -->
-      <div class="small-list" ng-show="item.type == 'small-list'">
+      <div class="small-list" ng-if="item.type == 'small-list'">
         <div class="clearfix">
           <div>
             <div class="title" ng-show="item.left.title">{{item.left.title}}</div>
