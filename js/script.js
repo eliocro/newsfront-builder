@@ -1,98 +1,25 @@
 Array.prototype.move = function (old_index, new_index) {
-    while (old_index < 0) {
-        old_index += this.length;
+  while (old_index < 0) {
+    old_index += this.length;
+  }
+  while (new_index < 0) {
+    new_index += this.length;
+  }
+  if (new_index >= this.length) {
+    var k = new_index - this.length;
+    while ((k--) + 1) {
+      this.push(undefined);
     }
-    while (new_index < 0) {
-        new_index += this.length;
-    }
-    if (new_index >= this.length) {
-        var k = new_index - this.length;
-        while ((k--) + 1) {
-            this.push(undefined);
-        }
-    }
-    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
-    return this; // for testing purposes
+  }
+  this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+  return this; // for testing purposes
 };
 
 (function () {
-  var app = angular.module('nf-builder', ['ngCookies']);
-  app.controller('MainCtrl', function ($scope, $cookieStore) {
+  angular.module('nf-builder', ['ngCookies'])
+  .controller('MainCtrl', function ($scope, $cookieStore) {
     $scope.overlay = false;
-
-    $scope.createGrid = function () {
-      console.log('Create grid');
-      var section = {
-        type: 'grid',
-        title: 'The Grid',
-        count: 6
-      };
-
-      $scope.conf.sections.push(section);
-      $scope.saveConfig();
-    };
-
-    $scope.createSmallGrid = function () {
-      console.log('Create grid');
-      var section = {
-        type: 'small-grid',
-        title: 'The Small Grid',
-        left: {
-          count: 3
-        },
-        right: {
-          count: 4
-        }
-      };
-
-      $scope.conf.sections.push(section);
-      $scope.saveConfig();
-    };
-
-    $scope.createList = function () {
-      console.log('Create list');
-      var section = {
-        type: 'list',
-        title: 'The List',
-        count: 8
-      };
-      $scope.conf.sections.push(section);
-      $scope.saveConfig();
-    };
-
-    $scope.createSmallList = function () {
-      console.log('Create small list');
-      var section = {
-        type: 'small-list',
-        left: {
-          title: 'Small List Left',
-          count: 3
-        },
-        center: {
-          title: 'Small List Center',
-          count: 5
-        },
-        right: {
-          title: 'Small List Right',
-          count: 4
-        }
-      };
-
-      $scope.conf.sections.push(section);
-      $scope.saveConfig();
-    };
-
-    $scope.createFeature = function () {
-      console.log('Create feature');
-      var section = {
-        type: 'feature',
-        title: 'Featured article'
-      };
-
-      $scope.conf.sections.push(section);
-      $scope.saveConfig();
-    };
-
+    $scope.form = {};
 
     /* Editor Methods */
     $scope.showEditor = function (what, idx) {
@@ -166,6 +93,66 @@ Array.prototype.move = function (old_index, new_index) {
     };
 
     /* Section control */
+    $scope.createSection = function (type) {
+      var section;
+      console.log('Create', type);
+
+      if(type === 'grid') {
+        section = {
+          type: 'grid',
+          title: 'The Grid',
+          count: 6
+        };
+      }
+      else if(type === 'small-grid') {
+        section = {
+          type: 'small-grid',
+          title: 'The Small Grid',
+          left: {
+            count: 3
+          },
+          right: {
+            count: 3
+          }
+        };
+      }
+      else if(type === 'list') {
+        section = {
+          type: 'list',
+          title: 'The List',
+          count: 8
+        };
+      }
+      else if(type === 'small-list') {
+        section = {
+          type: 'small-list',
+          left: {
+            title: 'Small List Left',
+            count: 3
+          },
+          center: {
+            title: 'Small List Center',
+            count: 5
+          },
+          right: {
+            title: 'Small List Right',
+            count: 4
+          }
+        };
+      }
+      else if(type === 'feature') {
+        section = {
+          type: 'feature',
+          title: 'Featured article'
+        };
+      }
+
+      if(section) {
+        $scope.conf.sections.push(section);
+        $scope.saveConfig();
+      }
+    };
+
     $scope.moveSection = function (idx, where) {
       var next = idx + where;
       if(next >= 0 && next < $scope.conf.sections.length) {

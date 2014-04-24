@@ -306,7 +306,7 @@ html, body {
 }
 
 /* line 43, ../sass/modules/_layout.scss */
-.add-section {
+.create-section {
   z-index: 100;
   position: fixed;
   left: 0;
@@ -315,7 +315,7 @@ html, body {
   margin-top: -183px;
 }
 /* line 50, ../sass/modules/_layout.scss */
-.add-section button {
+.create-section button {
   display: block;
   margin-bottom: 8px;
 }

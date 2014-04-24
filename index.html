@@ -19,7 +19,7 @@
   <!-- EDITOR OVERLAY -->
   <div class="form-overlay" ng-show="overlay">
     <div class="inside clearfix">
-      <i class="icon-x-circle" ng-click="overlay = false"></i>
+      <i class="icon-x-circle" ng-click="closeEditor()"></i>
 
       <!-- TOP MENU -->
       <div ng-show="overlay === 'topMenu'">
@@ -134,18 +134,15 @@
     </div>
   </div>
 
-  <!-- NEW SECTION BUTTONS -->
-  <div class="add-section">
-    <button class="btn btn-orange" ng-click="createFeature()">Create feature</button>
-
-    <button class="btn btn-green" ng-click="createGrid()">Create grid</button>
-    <button class="btn btn-green" ng-click="createSmallGrid()">Create small grid</button>
-
-    <button class="btn btn-blue" ng-click="createList()">Create list</button>
-    <button class="btn btn-blue" ng-click="createSmallList()">Create small list</button>
-
+  <!-- CREATE SECTION BUTTONS -->
+  <div class="create-section">
+    <button class="btn btn-orange" ng-click="createSection('feature')">Create feature</button>
+    <button class="btn btn-green" ng-click="createSection('grid')">Create grid</button>
+    <button class="btn btn-green" ng-click="createSection('small-grid')">Create small grid</button>
+    <button class="btn btn-blue" ng-click="createSection('list')">Create list</button>
+    <button class="btn btn-blue" ng-click="createSection('small-list')">Create small list</button>
     <button class="btn" ng-click="showEditor('config')">Show config</button>
-    <br><br><br>
+    <br><br>
     <button class="btn btn-outline" ng-click="clearConfig()">Clear config</button>
   </div>
 
