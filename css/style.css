@@ -426,15 +426,15 @@ html, body {
 
 /* line 2, ../sass/modules/_sections.scss */
 .multi-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   min-height: 400px;
 }
 
 /* line 8, ../sass/modules/_sections.scss */
 section {
   position: relative;
-  margin: 40px 0;
+  margin: 30px 0;
 }
 /* line 11, ../sass/modules/_sections.scss */
 section .title {

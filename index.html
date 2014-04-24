@@ -148,7 +148,7 @@
 
   <!-- TOP MENU -->
   <div class="top-menu">
-    <i class="right icon-list-thumbnails" ng-click="showEditor('topMenu')"></i>
+    <i class="right icon-widget" ng-click="showEditor('topMenu')" title="Settings"></i>
     <div class="wrapper">
       Newsfront
       <a href="" ng-click="tm=!tm">Meny</a>
@@ -165,7 +165,7 @@
 
   <!-- MAIN MENU -->
   <div class="main-menu">
-    <i class="right icon-list-thumbnails" ng-click="showEditor('mainMenu')"></i>
+    <i class="right icon-widget" ng-click="showEditor('mainMenu')" title="Settings"></i>
     <div class="wrapper">
       Forside
       <a href="" ng-click="mm=!mm">Seksjoner</a>
@@ -187,18 +187,18 @@
 
       <!-- TOOLBOX -->
       <div class="toolbox">
-        <a href="" ng-click="showEditor(item.type, $index)">
-          <i class="icon-list-thumbnails"></i>
+        <a href="" ng-click="showEditor(item.type, $index)" title="Settings">
+          <i class="icon-widget"></i>
         </a>
         <br>
-        <a href="" ng-click="moveSection($index, -1)">
+        <a href="" ng-click="moveSection($index, -1)" title="Move Up">
           <i class="icon-arrow-up"></i>
         </a>
-        <a href="" ng-click="moveSection($index, 1)">
+        <a href="" ng-click="moveSection($index, 1)" title="Move Down">
           <i class="icon-arrow-down"></i>
         </a>
         <br>
-        <a href="" ng-click="deleteSection($index)">
+        <a href="" ng-click="deleteSection($index)" title="Delete">
           <i class="icon-x-circle"></i>
         </a>
       </div>
@@ -281,7 +281,7 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <i class="right icon-list-thumbnails" ng-click="showEditor('footer')"></i>
+    <i class="right icon-widget" ng-click="showEditor('footer')" title="Settings"></i>
     <div class="wrapper clearfix">
       <div class="logo">Newsfront</div>
       <ul>

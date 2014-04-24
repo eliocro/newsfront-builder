@@ -47,6 +47,6 @@
 .icon-x-circle:before {
   content: "c";
 }
-.icon-list-thumbnails:before {
-  content: "d";
+.icon-widget:before {
+  content: "e";
 }
