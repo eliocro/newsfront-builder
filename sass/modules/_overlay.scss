@@ -8,12 +8,20 @@
   left: 0;
   background: rgba(0,0,0,0.4);
   .inside {
+    position: relative;
     width: 450px;
     padding: 20px 30px 25px;
     background-color: #f9f9f9;
     margin: 80px auto 0;
     border-radius: 8px;
     font-size: 0.9em;
+    i {
+      position: absolute;
+      right: 2px;
+      top: 5px;
+      font-size: 28px;
+      cursor: pointer;
+    }
   }
 }
 

@@ -520,6 +520,7 @@ section .toolbox a:hover {
 }
 /* line 10, ../sass/modules/_overlay.scss */
 .form-overlay .inside {
+  position: relative;
   width: 450px;
   padding: 20px 30px 25px;
   background-color: #f9f9f9;
@@ -527,14 +528,22 @@ section .toolbox a:hover {
   border-radius: 8px;
   font-size: 0.9em;
 }
+/* line 18, ../sass/modules/_overlay.scss */
+.form-overlay .inside i {
+  position: absolute;
+  right: 2px;
+  top: 5px;
+  font-size: 28px;
+  cursor: pointer;
+}
 
-/* line 20, ../sass/modules/_overlay.scss */
+/* line 28, ../sass/modules/_overlay.scss */
 label {
   display: block;
   margin-top: 15px;
 }
 
-/* line 24, ../sass/modules/_overlay.scss */
+/* line 32, ../sass/modules/_overlay.scss */
 input[type="text"], textarea {
   display: block;
   margin: 5px 0;
@@ -545,12 +554,12 @@ input[type="text"], textarea {
   background-color: white;
   outline: none;
 }
-/* line 33, ../sass/modules/_overlay.scss */
+/* line 41, ../sass/modules/_overlay.scss */
 input[type="text"].small, textarea.small {
   width: 30%;
 }
 
-/* line 37, ../sass/modules/_overlay.scss */
+/* line 45, ../sass/modules/_overlay.scss */
 textarea {
   min-height: 80px;
 }

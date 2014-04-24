@@ -17,23 +17,7 @@ Array.prototype.move = function (old_index, new_index) {
 
 (function () {
   var app = angular.module('nf-builder', ['ngCookies']);
-
   app.controller('MainCtrl', function ($scope, $cookieStore) {
-    $scope.conf = {
-      topMenu: {
-        barItems: ['Menu item 1', 'Menu item 2', 'Menu item 3'],
-        subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5', 'Menu item 6']
-      },
-      mainMenu: {
-        barItems: ['Menu item 4', 'Menu item 5', 'Menu item 6'],
-        subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5', 'Menu item 6']
-      },
-      footer: {
-        menuItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5'],
-        tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      },
-      section: []
-    };
     $scope.overlay = false;
 
     $scope.createGrid = function () {
@@ -109,8 +93,76 @@ Array.prototype.move = function (old_index, new_index) {
       $scope.saveConfig();
     };
 
-    $scope.showEditor = function (what) {
+
+    /* Editor Methods */
+    $scope.showEditor = function (what, idx) {
       $scope.overlay = what || true;
+      $scope.form = {};
+      $scope.formIdx = idx;
+
+      var section = $scope.conf.sections[idx];
+      if(section) {
+        $scope.form[what] = $.extend(true, {}, section);
+      }
+      else if(what === 'mainMenu' || what === 'topMenu') {
+        // menus
+        var menu = $scope.conf[what];
+        $scope.form[what] = {
+          barItems: menu.barItems.join(', '),
+          subItems: menu.subItems.join(', '),
+          description: menu.description
+        };
+      }
+      else if(what === 'footer') {
+        // footer
+        var footer = $scope.conf.footer;
+        $scope.form.footer = {
+          menuItems: footer.menuItems.join(', '),
+          tagline: footer.tagline,
+          description: footer.description
+        };
+      }
+      else {
+        // conf
+        $scope.form.conf = JSON.stringify($scope.conf);
+      }
+    };
+
+    $scope.saveEditor = function () {
+      var what = $scope.overlay;
+      var section = $scope.conf.sections[$scope.formIdx];
+
+      if(section) {
+        $scope.conf.sections[$scope.formIdx] =
+          $.extend(true, {}, $scope.form[what]);
+      }
+      else if(what === 'mainMenu' || what === 'topMenu') {
+        // menus
+        var menu = $scope.conf[what];
+        menu.barItems = $scope.form[what].barItems.split(',');
+        menu.subItems = $scope.form[what].subItems.split(',');
+        menu.description = $scope.form[what].description;
+      }
+      else if(what === 'footer') {
+        // footer
+        var footer = $scope.conf.footer;
+        footer.menuItems = $scope.form.footer.menuItems.split(',');
+        footer.tagline = $scope.form.footer.tagline;
+        footer.description = $scope.form.footer.description;
+      }
+      else {
+        // conf
+        $scope.conf = JSON.parse($scope.form.conf);
+      }
+
+      // Hide and clear
+      $scope.saveConfig();
+      $scope.closeEditor();
+    };
+
+    $scope.closeEditor = function () {
+      $scope.overlay = false;
+      $scope.form = {};
     };
 
     /* Section control */
@@ -130,28 +182,48 @@ Array.prototype.move = function (old_index, new_index) {
     /* Aux */
     $scope.getArray = function (cnt) {
       var res = [];
-      for (var i = 0; i < cnt; i++) {
+      for (var i = 0; i < +cnt; i++) {
         res.push(i);
       }
       return res;
     };
 
+    /* Clear the config and set a default */
     $scope.clearConfig = function () {
-      $scope.conf.sections = [];
+      $scope.conf = {
+        topMenu: {
+          barItems: ['Menu item 1', 'Menu item 2', 'Menu item 3'],
+          subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3',
+            'Menu item 4', 'Menu item 5', 'Menu item 6'],
+          description: ''
+        },
+        mainMenu: {
+          barItems: ['Menu item 4', 'Menu item 5', 'Menu item 6'],
+          subItems: ['Menu item 1', 'Menu item 2', 'Menu item 3',
+            'Menu item 4', 'Menu item 5', 'Menu item 6'],
+          description: ''
+        },
+        footer: {
+          menuItems: ['Menu item 1', 'Menu item 2', 'Menu item 3', 'Menu item 4', 'Menu item 5'],
+          tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          description: ''
+        },
+        sections: []
+      };
       $scope.saveConfig();
-    };
-
-    $scope.getConfig = function () {
-      console.log(JSON.stringify($scope.conf.sections));
     };
 
     /* Save a read from cookie */
     $scope.saveConfig = function () {
-      $cookieStore.put('config', $scope.conf.sections);
+      $cookieStore.put('config', $scope.conf);
     };
-    $scope.conf.sections = $cookieStore.get('config') || [];
 
-    console.log($scope.conf.sections);
+    // Init
+    $scope.conf = $cookieStore.get('config');
+    if(!$scope.conf || !$scope.conf.topMenu) {
+      $scope.clearConfig();
+    }
+    console.log($scope.conf);
   });
 
 })();

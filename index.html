@@ -19,104 +19,115 @@
   <!-- EDITOR OVERLAY -->
   <div class="form-overlay" ng-show="overlay">
     <div class="inside clearfix">
+      <i class="icon-x-circle" ng-click="overlay = false"></i>
 
+      <!-- TOP MENU -->
       <div ng-show="overlay === 'topMenu'">
         <h2>Top Menu</h2>
         <label>Menu bar items</label>
-        <textarea placeholder="Enter the menu items, separated by comma."></textarea>
+        <textarea ng-model="form.topMenu.barItems" placeholder="Enter the menu items, separated by comma."></textarea>
         <label>Sub menu items</label>
-        <textarea></textarea>
+        <textarea ng-model="form.topMenu.subItems"></textarea>
         <label>Description</label>
-        <textarea placeholder="Describe the menu (color, strings, etc)..."></textarea>
+        <textarea ng-model="form.topMenu.description" placeholder="Describe the menu (color, strings, etc)..."></textarea>
       </div>
 
+      <!-- MAIN MENU -->
       <div ng-show="overlay === 'mainMenu'">
         <h2>Main Menu</h2>
         <label>Menu bar items</label>
-        <textarea placeholder="Enter the menu items, separated by comma."></textarea>
+        <textarea ng-model="form.mainMenu.barItems" placeholder="Enter the menu items, separated by comma."></textarea>
         <label>Sub menu items</label>
-        <textarea></textarea>
+        <textarea ng-model="form.mainMenu.subItems"></textarea>
         <label>Description</label>
-        <textarea placeholder="Describe the menu (color, strings, etc)..."></textarea>
+        <textarea ng-model="form.mainMenu.description" placeholder="Describe the menu (color, strings, etc)..."></textarea>
       </div>
 
+      <!-- FOOTER -->
       <div ng-show="overlay === 'footer'">
         <h2>Footer</h2>
         <label>Footer Menu items</label>
-        <textarea></textarea>
+        <textarea ng-model="form.footer.menuItems"></textarea>
         <label>Tagline</label>
-        <input type="text">
+        <input ng-model="form.footer.tagline" type="text">
         <label>Description</label>
-        <textarea placeholder="Describe any aspect of the footer..."></textarea>
+        <textarea ng-model="form.footer.description" placeholder="Describe any aspect of the footer..."></textarea>
       </div>
 
+      <!-- CONFIG -->
       <div ng-show="overlay === 'config'">
         <h2>Builder config</h2>
         <br>
-        <textarea style="height: 300px;"></textarea>
+        <textarea ng-model="form.conf" style="height: 300px;"></textarea>
       </div>
 
+      <!-- FEATURE -->
       <div ng-show="overlay === 'feature'">
         <h2>Featured Article</h2>
         <label>Title</label>
-        <input type="text" value="">
+        <input ng-model="form.feature.title" type="text" value="">
         <label>Description</label>
-        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+        <textarea ng-model="form.feature.descrition" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
 
+      <!-- GRID -->
       <div ng-show="overlay === 'grid'">
         <h2>Grid</h2>
         <label>Title</label>
-        <input type="text" value="">
+        <input ng-model="form.grid.title" type="text" value="">
         <label>Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form.grid.count" type="text" class="small">
         <label>Description</label>
-        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+        <textarea ng-model="form.grid.description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
 
+      <!-- SMALL GRID -->
       <div ng-show="overlay === 'small-grid'">
         <h2>Small Grid</h2>
         <label>Title</label>
-        <input type="text" value="">
+        <input ng-model="form['small-grid'].title" type="text" value="">
         <label>LEFT: Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form['small-grid'].left.count" type="text" class="small">
         <label>RIGHT: Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form['small-grid'].right.count" type="text" class="small">
         <label>Description</label>
-        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+        <textarea ng-model="form['small-grid'].description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
 
+      <!-- LIST -->
       <div ng-show="overlay === 'list'">
         <h2>List</h2>
         <label>Title</label>
-        <input type="text" value="">
+        <input ng-model="form.list.title" type="text" value="">
         <label>Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form.list.count" type="text" class="small">
         <label>Description</label>
-        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+        <textarea ng-model="form.list.description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
 
+      <!-- SMALL LIST -->
       <div ng-show="overlay === 'small-list'">
         <h2>Small lists</h2>
         <label>LEFT: Title</label>
-        <input type="text" value="">
+        <input ng-model="form['small-list'].left.title" type="text" value="">
         <label>LEFT: Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form['small-list'].left.count" type="text" class="small">
         <label>CENTER: Title</label>
-        <input type="text" value="">
+        <input ng-model="form['small-list'].center.title" type="text" value="">
         <label>CENTER: Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form['small-list'].center.count" type="text" class="small">
         <label>RIGHT: Title</label>
-        <input type="text" value="">
+        <input ng-model="form['small-list'].right.title" type="text" value="">
         <label>RIGHT: Number of elements</label>
-        <input type="text" class="small">
+        <input ng-model="form['small-list'].right.count" type="text" class="small">
         <label>Description</label>
-        <textarea placeholder="Describe what content should be loaded here..."></textarea>
+        <textarea ng-model="form['small-list'].description" placeholder="Describe what content should be loaded here..."></textarea>
       </div>
 
       <br>
+      <!-- FORM CONTROLS -->
       <div class="right">
-        <button class="btn" ng-click="overlay = false">Cancel</button>
+        <button class="btn" ng-click="closeEditor()">Cancel</button>
         &nbsp;
         <button class="btn btn-green" ng-click="saveEditor()">Save</button>
       </div>
